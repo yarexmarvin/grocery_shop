@@ -1,0 +1,80 @@
+@use 'shared/colors.scss' as colors;
+
+
+.container{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    justify-content: space-evenly;
+    background-color: #FFF;
+    width: 100%;
+}
+
+.button:last-child{
+    padding: 0;
+}
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0 5px;
+    box-sizing: border-box;
+    color: colors.$main_surface;
+    position: relative;
+
+    & span {
+        position: absolute;
+        top: 5px;
+        right: 0px;
+        color: #FFF;
+        background-color: colors.$main;
+        border-radius: 20px;
+        padding: 2px 4px;
+        font-size: 8px;
+    }
+
+    & p {
+        margin: 2px 0 ;
+        font-size: 8px;
+        line-height: 12px;
+    }
+}
+
+.avatar{
+    width: 36px;
+    height: 36px;
+    background-color: bisque;
+    border-radius: 100%;
+}
+
+.icon-activity:before {
+    content: "\e900";
+  }
+
+@media (min-width: 640px) {
+    .container{
+        display: none;
+    }
+}
+.active{
+    color: colors.$main;
+}
+
+@media (max-width: 320px) {
+    .button {
+
+        & i {
+            font-size: 16px;
+        }
+
+        & span {
+            font-size: 6;
+        }
+    }
+
+    .avatar{
+        width: 24px;
+        height: 24px;
+    }
+}

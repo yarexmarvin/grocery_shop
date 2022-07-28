@@ -1,0 +1,51 @@
+@use "shared/colors.scss" as color;
+@use "shared/styles.scss" as styles;
+
+.button {
+  @include styles.flexbox-center(row);
+  font-family: "Rubik";
+  width: 100%;
+  max-width: 256px;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 8px 0;
+  border-radius: 4px;
+  border: 1px solid color.$secondary;
+  font-size: 16px;
+  line-height: 24px;
+  transition: 0.1s linear all;
+}
+
+.in_basket {
+  color: color.$secondary;
+  background-color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    background-color: color.$main;
+    color: #fff;
+    border-color: color.$main;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.add_subtract {
+  justify-content: space-between;
+  align-items: center;
+  background-color: color.$secondary;
+  color: #fff;
+  & div {
+    @include styles.flexbox-center(row);
+    cursor: pointer;
+    margin: 0 8px;
+    width: 100%;
+  }
+  & div:first-child {
+    justify-content: flex-start;
+  }
+  & div:last-child {
+    justify-content: flex-end;
+  }
+}

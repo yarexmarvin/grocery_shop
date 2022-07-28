@@ -1,0 +1,62 @@
+@use 'shared/colors.scss' as colors;
+@use 'shared/styles.scss' as styles;
+
+.container {
+    @include styles.flexbox-center(column);
+    margin-right: 24px;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.1s ease-in-out;
+
+    &:hover{
+        opacity: 1;
+    }
+
+    &:active {
+        transform: scale(0.990);
+        opacity: 0.6;
+    }
+
+    & div {
+        position: relative;
+    }
+
+    & span {
+        position: absolute;
+        top: -4px;
+        right: -7px;
+        color: #FFF;
+        background-color: colors.$main;
+        border-radius: 20px;
+        padding: 2px 4px;
+        font-size: 8px;
+    }
+
+    & img {
+        margin-bottom: 8px;
+    }
+
+    & p {
+        margin: 2px 0 0;
+        font-size: 12px;
+        line-height: 18px;
+        color: colors.$main_surface;
+    }
+}
+
+@media(max-width: 1024px){
+    .container{
+        margin-right: 12px;
+    }
+}
+
+@media(max-width: 640px){
+    .container{
+      display: none;
+    }
+  }

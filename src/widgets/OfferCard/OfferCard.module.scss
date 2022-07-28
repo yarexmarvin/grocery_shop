@@ -1,0 +1,108 @@
+@use "shared/colors.scss" as colors;
+
+.banner {
+  display: flex;
+  padding: 30px;
+  justify-content: space-between;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  text-align: left;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+
+  cursor: pointer;
+  max-width: 584px;
+  &:hover {
+    transform: scale(1.005);
+  }
+  &:active {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  & div:first-child {
+    flex-basis: 70%;
+    margin-right: 30px;
+  }
+  & div:last-child {
+    flex-basis: 30%;
+  }
+  & h5 {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+    color: colors.$main_surface;
+    margin: 0 0 3px;
+  }
+  & p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: colors.$main_surface;
+    margin: 3px 0 0;
+  }
+}
+
+.primary {
+  background-color: colors.$main_light;
+  &:hover {
+    box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2);
+  }
+  &:active {
+    box-shadow: none;
+  }
+}
+.secondary {
+  background-color: colors.$secondary_light;
+  &:hover {
+    box-shadow: 4px 8px 16px rgba(112, 192, 91, 0.2);
+  }
+  &:active {
+    box-shadow: none;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .banner:nth-child(n){
+    margin-left :16px;
+    margin-right :16px;
+  }
+  .banner{
+    max-width: 250px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-height: unset;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    & h5 {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    & p {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    & div:first-child {
+      flex-basis: 100%;
+      margin-right: 0px;
+      text-align: center;
+    }
+    & div:last-child {
+      flex-basis: 100%;
+      text-align: center;
+      margin-top: 10px;
+
+    }
+    & img{
+      width: 50%;
+      margin: 0 auto;
+    }
+
+  }
+  
+}

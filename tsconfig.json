@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
+    "rootDirs": [".", "src"],
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["*", "src/*"]
+    },
     "lib": [
       "dom",
       "dom.iterable",
@@ -22,5 +27,6 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "exclude": ["node_modules", "**/node_modules/*"]
 }

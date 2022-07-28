@@ -1,0 +1,54 @@
+@use 'shared/colors.scss' as colors;
+
+.wrapper {
+    max-width: 1208px;
+    padding: 5vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    // grid-template-columns: repeat(3, 224px);
+    grid-template-columns: repeat(4, 224px);
+    gap: 20px;
+
+    & h1 {
+        grid-column: span 4;
+        margin: 0;
+        font-size: 64px;
+        line-height: 96px;
+        text-align: left;
+        width: 100%;
+        color: colors.$main_surface;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, 224px);
+
+        & h1 {
+            grid-column: span 2;
+
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+
+        & h1 {
+            padding: 0 1vw;
+            font-size: 48px;
+            line-height: 64px;
+        }
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

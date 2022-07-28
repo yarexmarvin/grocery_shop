@@ -1,0 +1,15 @@
+@use "shared/colors.scss" as color;
+@use "shared/styles.scss" as styles;
+
+.rating {
+  @include styles.flexbox-center(row);
+}
+
+.active{
+  font-size: 18px;
+  color: color.$main;
+}
+.not_active {
+  font-size: 18px;
+  color: #bfbfbf;
+}

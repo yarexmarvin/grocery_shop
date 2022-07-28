@@ -1,0 +1,84 @@
+@use 'shared/colors.scss' as colors;
+@use 'shared/styles.scss' as styles;
+
+.wrapper {
+    position: relative;
+    @include styles.width-height-100;
+    max-width: 201px;
+    max-height: 56px;
+}
+
+.container {
+    @include styles.position-absolute;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: #FFF;
+    border-radius: 4px;
+    padding: 8px;
+    color: colors.$main_surface;
+    transition: 0.2s all linear;
+
+}
+
+.active {
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    & div {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: colors.$gray_hard;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.name {
+    margin-right: 24px;
+}
+
+.links {
+    text-align: left;
+    padding: 8px;
+    width: 100%;
+    transition: 0.1s all ease;
+
+    & p {
+        font-size: 18px;
+        line-height: 32px;
+        cursor: pointer;
+
+        &:hover {
+            color: colors.$main;
+        }
+    }
+}
+
+@media(max-width: 1024px){
+    .wrapper{
+        max-width: 95px;
+    }
+    .name{
+        display: none;
+    }
+}
+
+@media(max-width: 640px){
+    .wrapper{
+      display: none;
+    }
+  }

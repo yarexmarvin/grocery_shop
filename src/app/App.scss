@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  min-height: 500vh;
 }
 
 .App-logo {
@@ -13,9 +14,15 @@
   }
 }
 
+
+
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  font-family: "Rubik";
+  min-height: 50vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,6 +33,8 @@
 
 .App-link {
   color: #61dafb;
+  font-weight: 300;
+
 }
 
 @keyframes App-logo-spin {

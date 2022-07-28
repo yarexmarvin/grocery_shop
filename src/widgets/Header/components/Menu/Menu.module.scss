@@ -1,0 +1,128 @@
+@use "shared/colors.scss" as colors;
+
+
+.button {
+  display: flex;
+  width: 100%;
+  max-width: 140px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: colors.$secondary;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.1s all ease-in-out;
+
+  &:hover {
+    opacity: 0.7;
+    transform: scale(1.01);
+  }
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+
+  & i {
+    margin-right: 8px;
+  }
+
+  & p {
+    padding: 0;
+    margin: 0 8px;
+  }
+}
+
+.items {
+  width: 100%;
+  padding: 40px 116px;
+  position: absolute;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  display: none;
+  top: 70px;
+  left: 0px;
+  z-index: -1;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  color: colors.$main_surface;
+
+  & div {
+    flex-basis: 25%;
+    text-align: left;
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    margin: 12px 0;
+    cursor: pointer;
+    transition: 0.1s ease all;
+  }
+
+  & div:hover {
+    color: colors.$main;
+  }
+
+  & div:active {
+    transform: scale(0.95);
+  }
+}
+
+.active {
+  display: flex;
+}
+
+@media (max-width: 1280px) {
+  .items {
+    padding: 64px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .button {
+    & p {
+      display: none;
+    }
+
+    & i {
+      margin: 0;
+    }
+  }
+
+  .items {
+    padding: 36px;
+    & div {
+      flex-basis: unset;
+      width: unset;
+      margin: 16px 32px;
+    }
+  }
+}
+
+@media(max-width: 640px) {
+  .button {
+    display: none;
+  }
+
+  .items {
+    padding: 24px;
+    & div {
+      flex-basis: unset;
+      width: unset;
+    }
+  }
+}
+
+@media(max-width: 400px) {
+  .items {
+    padding: 12px;
+    & div {
+      margin: 8px;
+    }
+  }
+}

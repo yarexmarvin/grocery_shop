@@ -1,0 +1,151 @@
+@use 'shared/colors.scss' as colors;
+@use 'shared/styles.scss' as styles;
+
+.wrapper {
+    background-color: #F9F4E2;
+    position: relative;
+    width: 100%;
+    padding: 24px 0 72px;
+    overflow: hidden;
+}
+
+.bg {
+    @include styles.position-absolute;
+    z-index: 0;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding: 0 116px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+
+    & div,
+    & ul {
+        display: flex;
+        align-items: center;
+
+    }
+    & ul {
+        margin: 0 16px;
+    }
+
+}
+
+.logo {
+    max-width: 64px;
+    cursor: pointer;
+
+    & img {
+        width: 100%;
+    }
+}
+
+.links {
+    & li {
+        font-size: 12px;
+        line-height: 18px;
+        color: colors.$main_surface;
+        list-style: none;
+        cursor: pointer;
+        margin: 0 20px;
+    }
+
+    & li:hover {
+        text-decoration: underline;
+    }
+
+    & li:first-child {
+        margin-left: 0;
+    }
+
+    & li:last-child {
+        margin-right: 0;
+    }
+}
+
+.social {
+    display: flex;
+
+    & img {
+        width: 24px;
+        margin: 0 8px;
+        cursor: pointer;
+        transition: all 0.1s linear;
+    }
+
+    & img:hover {
+        opacity: 0.7;
+    }
+
+    & img:first-child {
+        margin-left: 0;
+    }
+
+    & img:last-child {
+        margin-right: 0;
+    }
+
+}
+
+.contact {
+    margin-left: 40px;
+
+    & img {
+        width: 24px;
+    }
+
+    & p {
+        font-size: 16px;
+        line-height: 24px;
+        color: colors.$main_surface;
+        margin-left: 6px;
+    }
+}
+
+
+@media(max-width: 1280px) {
+    .container {
+        padding: 0 36px;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        & div,
+        & ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+
+        }
+
+        & li {
+            margin-top: 15px;
+            text-align: center;
+        }
+    }
+
+    .social{
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .bg{
+        height: 100%;
+        object-fit: cover;
+    }
+    .social{
+        margin-top: 15px;
+        width: 100%;
+    }
+    .contact{
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
