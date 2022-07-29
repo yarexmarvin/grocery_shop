@@ -1,0 +1,115 @@
+@use 'shared/colors.scss' as colors;
+
+
+.header {
+    font-size: 36px;
+    line-height: 54px;
+    font-weight: 700;
+    color: colors.$main_surface;
+}
+
+.feedback {
+    display: flex;
+}
+
+.overall {
+    flex-basis: 25%;
+    box-sizing: border-box;
+    margin-right: 10vw;
+
+    &>div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    & p {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        margin: 8px 0;
+        color: colors.$main_surface;
+    }
+
+    & p:last-child {
+        font-weight: 700;
+    }
+}
+
+.summary {
+
+    & p {
+        font-size: 18px;
+        line-height: 27px;
+        font-weight: 700;
+        margin-left: 16px;
+        color: colors.$main_surface;
+        margin-bottom: 16px;
+
+    }
+
+}
+
+
+.review {
+    flex-basis: 70%;
+    margin-bottom: 24px;
+
+    & div {
+        display: flex;
+        align-items: center;
+    }
+
+
+    & p {
+        margin: 0;
+    }
+
+    & > div {
+        margin-bottom: 12px;
+    }
+
+    &__name {
+        font-size: 18px;
+        line-height: 27px;
+        font-weight: 400;
+        color: colors.$main_surface;
+        & i {
+            font-size: 16px;
+            margin-right: 8px;
+            border: 1px solid #F3F2F1;;
+            padding: 10px;
+            border-radius: 100%;
+        }
+    }
+
+    &__rating{
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 400;
+        color: colors.$gray_hard;
+        & p {
+            margin-left: 16px;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: colors.$main_surface;
+    }
+}
+
+
+@media (max-width: 1280px) {
+    .feedback{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .overall{
+        margin-right: 0;
+        margin-bottom: 10vh;
+        flex-basis: unset;
+    }
+}

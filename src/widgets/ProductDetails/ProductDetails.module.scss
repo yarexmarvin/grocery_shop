@@ -1,5 +1,90 @@
+@use 'shared/colors.scss' as colors;
 
 .container {
     display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
+
+.header {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+    margin: 24px 0 0;
+    color: colors.$main_surface;
+}
+.actions{
+    display: flex;
+    width: 100%;
+    margin: 16px 0;
+}
+.art {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    color: colors.$main_surface;
+}
+
+.rating{
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+
+
+    & a {
+        font-size: 14px;
+        line-height: 21px;
+        font-weight: 400;
+        color: colors.$main_surface;
+        margin-left: 8px;
+    }
+}
+
+.share{
+    display: flex;
+    align-items: center;
+    margin: 0 12px;
+    & i {
+        font-size: 24px;
+        margin-right: 8px;
+    }
+    & p {
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 400;
+        color: colors.$gray_hardest;
+    }
+}
+.favourite{
+    display: flex;
+    align-items: center;
+    margin: 0 12px;
+    & i {
+        font-size: 24px;
+        margin-right: 8px;
+    }
+    & p {
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: 400;
+        color: colors.$gray_hardest;
+    }
+}
+
+@media (max-width: 1280px) {
+    .container{
+        padding-left: 64px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container{
+        padding: 0 32px;
+        justify-content: center;
+    }
+    .actions{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
