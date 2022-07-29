@@ -1,0 +1,52 @@
+@use 'shared/colors.scss' as colors;
+.wrapper {
+    &  p {
+        font-size: 16px;
+        line-height: 24px;
+        color: colors.$gray_hardest;
+        margin: 0 0 10px ;
+
+    }
+}
+.container {
+
+    & div {
+        position: relative;
+        background: #FFFFFF;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        width: 168px;
+        height: 104px;
+        margin: 16px 0;
+    }
+
+    & div > p {
+        font-size: 18px;
+        line-height: 27px;
+        font-weight: 700;
+        color: colors.$gray_hardest;
+        margin: 10px;
+    }
+
+    & img{
+        width: 100%;
+        display: block;
+    }
+}
+
+@media (max-width: 1280px) {
+    .wrapper{
+        text-align: center;
+        margin-top: 16px;
+
+    }
+    .container{
+       display: flex;
+       flex-wrap: wrap;
+       width: 100%;
+       justify-content: space-evenly;
+       & div {
+        margin: 8px 16px;
+       }
+    }
+}

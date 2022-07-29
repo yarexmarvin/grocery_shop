@@ -1,0 +1,74 @@
+@use "shared/colors.scss" as color;
+@use "shared/styles.scss" as styles;
+
+.button {
+  @include styles.flexbox-center(row);
+  font-family: "Rubik";
+  position: relative;
+  width: 100%;
+  max-width: 256px;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 8px 0;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  transition: 0.1s linear all;
+
+  & i {
+    position: absolute;
+    font-size: 32px;
+    left: 20px;
+  }
+}
+
+.secondary {
+  color: color.$secondary;
+  border: 1px solid color.$secondary;
+  background-color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    background-color: color.$main;
+    color: #fff;
+    border-color: color.$main;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}
+.primary {
+  color: #FFF;
+  background-color: color.$main;
+  border: 1px solid color.$main;
+  cursor: pointer;
+
+  &:hover {
+   opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+
+
+.add_subtract {
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  background-color: color.$secondary;
+  color: #fff;
+  & div {
+    @include styles.flexbox-center(row);
+    cursor: pointer;
+    margin: 0 8px;
+    width: 100%;
+  }
+  & div:first-child {
+    justify-content: flex-start;
+  }
+  & div:last-child {
+    justify-content: flex-end;
+  }
+}

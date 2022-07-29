@@ -1,10 +1,10 @@
 import styles from "./ItemCard.module.scss";
 import mockImg from "assets/mocks/milk.png";
 import FavouriteButton from "widgets/ItemCard/components/FavouriteButton/FavouriteButton";
-import DiscountLabel from "widgets/ItemCard/components/DiscountLabel/DiscountLabel";
-import Button from "widgets/ItemCard/components/BasketButton/BasketButton";
-import Rating from "widgets/ItemCard/components/Rating/Rating";
 import { CSSProperties } from "react";
+import DiscountLabel from "shared/components/DiscountLabel/DiscountLabel";
+import BasketButton from "shared/components/BasketButton/BasketButton";
+import Rating from "shared/components/Rating/Rating";
 
 
 type IStyles = {
@@ -22,11 +22,14 @@ const childrenStyle: IStyles = {
     left: "2px",
     bottom: "8px",
   },
-  rating: {
+};
+
+const ratingStyles: IStyles = {
+  container: {
     margin: "8px 0",
     justifyContent: "flex-start",
-  },
-};
+  }
+}
 
 const ItemCard = () => {
   return (
@@ -61,11 +64,10 @@ const ItemCard = () => {
       </div>
 
       <Rating
-        style={childrenStyle.rating}
+        style={ratingStyles}
         count={3}
       />
-
-      <Button label="В корзину" />
+      <BasketButton  label="В корзину"/>
     </div>
   );
 };

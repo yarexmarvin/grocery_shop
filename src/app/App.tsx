@@ -25,6 +25,7 @@ import Main from "pages/main/Main";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Wrapper from "pages/wrapper/Wrapper";
 import Catalog from "pages/catalog/Catalog";
+import Product from "pages/product/Product";
 
 
 
@@ -34,8 +35,10 @@ function App() {
   return (<BrowserRouter>
     <Routes>
       <Route path="/" element={<Wrapper />} >
+
         <Route index element={<Main/>} />
         <Route path="catalog" element={<Catalog/>}/>
+        <Route path="product" element={<Product />} />
       </Route>
     </Routes>
   </BrowserRouter>

@@ -3,7 +3,12 @@ import styles from "./Rating.module.scss";
 
 interface IRating {
   count?: number;
-  style?: CSSProperties;
+  style?: styleType;
+}
+
+type styleType = {
+  container?: CSSProperties;
+  star?: CSSProperties;
 }
 
 const Rating: FC<IRating> = ({ count = 0, style }) => {
@@ -19,15 +24,14 @@ const Rating: FC<IRating> = ({ count = 0, style }) => {
   const generateRatingStars = (rating: number) =>
     Array(5)
       .fill(" ")
-      .map((_, index) => <i className={`${index + 1 <= rating ? styles.active : styles.not_active} icon-star-copy`} />);
+      .map((_, index) => <i  style={style?.star} key={`${index}-star`} className={`${index + 1 <= rating ? styles.active : styles.not_active} icon-star-copy`} />);
 
   return (
     <div
-      style={style}
+      style={style?.container}
       className={styles.rating}
     >
       {generateRatingStars(value)}
-      <div className="filled"></div>
     </div>
   );
 };

@@ -1,0 +1,54 @@
+@use 'shared/colors.scss' as colors;
+
+.container {
+    display: flex;
+}
+
+.preview {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 16px;
+
+
+    &>div {
+        width: 100%;
+        max-width: 64px;
+        height: 87px;
+        display: flex;
+        align-items: center;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: #FFF;
+        border-radius: 4px;
+        box-sizing: border-box;
+        cursor: pointer;
+
+
+    }
+
+    & img {
+        width: 100%;
+        display: block;
+    }
+
+    & .active {
+        border: 1px colors.$main solid;
+    }
+}
+
+.photo {
+    position: relative;
+    width: 504px;
+    height: 496px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #FFF;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+
+    & img {
+        width: 100%;
+        display: block;
+    }
+}

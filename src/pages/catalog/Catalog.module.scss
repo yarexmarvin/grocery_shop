@@ -3,6 +3,7 @@
 .wrapper {
     max-width: 1208px;
     padding: 5vh 0;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +13,7 @@
 .container {
     display: grid;
     // grid-template-columns: repeat(3, 224px);
-    grid-template-columns: repeat(4, 224px);
+    grid-template-columns: repeat(4, 272px);
     gap: 20px;
 
     & h1 {
@@ -26,7 +27,17 @@
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
+    .container {
+        grid-template-columns: repeat(3, 224px);
+
+        & h1 {
+            grid-column: span 3;
+
+        }
+    }
+}
+@media (max-width: 768px) {
     .container {
         grid-template-columns: repeat(2, 224px);
 
